@@ -1,0 +1,33 @@
+
+### Django ###
+*.Iniciar sesión
+*.maceta
+* .pyc
+__pycache __ /
+local_settings.py
+db.sqlite3
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# mypy
+.mypy_cache/
+
+.DS_Store
+*.sqlite3
+media/
+*.pyc
+*.db
+*.pid
+
+# migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
