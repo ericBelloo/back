@@ -1,6 +1,9 @@
 
 # os
 import csv
+import os
+
+from back.settings import BASE_DIR
 # Django
 from django.http import HttpResponse
 # Models
@@ -8,7 +11,8 @@ from apps.heroe.models import Heroes, Editorial
 
 
 def create_heroes(request):
-    with open('static/csv/heroe/heroes.csv') as object_csv:
+    path = os.path.join(BASE_DIR, 'static')
+    with open(path + '/csv/heroe/heroes.csv') as object_csv:
         render_cvs = csv.reader(object_csv, delimiter='|', quotechar=' ')
         count = 0
         for row in render_cvs:
