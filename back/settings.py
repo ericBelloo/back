@@ -25,7 +25,7 @@ SECRET_KEY = '=!kx!8j#*(med==ovb=^#lhfy+p$+5(2q!_c!uo9gx6y2y!qh#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ericbello.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ericbello.pythonanywhere.com']
 
 
 # Application definition
@@ -123,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
