@@ -6,27 +6,27 @@ from apps.heroe.models import Heroes, Editorial
 
 
 class HeroesListSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(required=True, allow_null=False)
+    pk = serializers.IntegerField(required=True, allow_null=False)
     name = serializers.CharField(required=True, allow_null=True)
     description = serializers.CharField(required=True, allow_null=True)
     apparition = serializers.DateField(required=True, allow_null=True)
 
     class Meta:
         model = Heroes
-        fields = ('id', 'name', 'description', 'apparition')
+        fields = ('pk', 'name', 'description', 'apparition')
 
 
 class EditorialSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(required=True, allow_null=False)
+    pk = serializers.IntegerField(required=True, allow_null=False)
     name = serializers.CharField(required=True, allow_null=False)
 
     class Meta:
         model = Editorial
-        fields = ('id', 'name')
+        fields = ('pk', 'name')
 
 
 class HeroeDetailSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(required=True, allow_null=False)
+    pk = serializers.IntegerField(required=True, allow_null=False)
     name = serializers.CharField(required=True, allow_null=True)
     description = serializers.CharField(required=True, allow_null=True)
     apparition = serializers.DateField(required=True, allow_null=True)
@@ -34,4 +34,4 @@ class HeroeDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Heroes
-        fields = ('id', 'name', 'description', 'apparition', 'editorial')
+        fields = ('pk', 'name', 'description', 'apparition', 'editorial')
