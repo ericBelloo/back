@@ -27,7 +27,7 @@ class EditorialSerializer(serializers.ModelSerializer):
 
 class HeroeDetailSerializer(serializers.ModelSerializer):
     pk = serializers.IntegerField(required=True, allow_null=False)
-    name = serializers.CharField(required=True, allow_null=True)
+    name = serializers.CharField(required=True, allow_null=False)
     description = serializers.CharField(required=True, allow_null=True)
     apparition = serializers.DateField(required=True, allow_null=True)
     editorial = EditorialSerializer(many=False, read_only=True)
