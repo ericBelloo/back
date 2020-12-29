@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 from back import settings
 
 urlpatterns = [
+    # django urls
     path('admin/', admin.site.urls),
     # heroe api
-    path('api/heroes/', include('apps.heroe.api.urls')),
+    path('api/heroes/', include('apps.heroe.urls')),
     # heroe utils
     path('utils/heroes/', include('apps.heroe.utils.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

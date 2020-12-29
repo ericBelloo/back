@@ -1,9 +1,8 @@
 
-
 from django.urls import path
-from apps.heroe.api.views import HeroesList, HeroeDetail
+from apps.heroe.views import HeroesList, HeroeDetail
 
-app_name = 'heroe_api'
+app_name = 'heroe'
 
 urlpatterns = [
     path('heroes-list/', HeroesList.as_view(), name='get_heroes_list'),
