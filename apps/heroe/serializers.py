@@ -10,10 +10,11 @@ class HeroesListSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True, allow_null=True)
     description = serializers.CharField(required=True, allow_null=True)
     apparition = serializers.DateField(required=True, allow_null=True)
+    image = serializers.ImageField(allow_null=True)
 
     class Meta:
         model = Heroes
-        fields = ('pk', 'name', 'description', 'apparition')
+        fields = ('pk', 'name', 'description', 'apparition', 'image')
 
 
 class EditorialSerializer(serializers.ModelSerializer):
@@ -30,8 +31,9 @@ class HeroeDetailSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True, allow_null=False)
     description = serializers.CharField(required=True, allow_null=True)
     apparition = serializers.DateField(required=True, allow_null=True)
+    image = serializers.ImageField(allow_null=True)
     editorial = EditorialSerializer(many=False, read_only=True)
 
     class Meta:
         model = Heroes
-        fields = ('pk', 'name', 'description', 'apparition', 'editorial')
+        fields = ('pk', 'name', 'description', 'apparition', 'editorial', 'image')
