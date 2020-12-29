@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my apps
     'rest_framework',
-    'corsheaders',
+    # 'corsheaders',
     'apps.heroe',
     'apps.address',
 ]

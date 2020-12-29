@@ -8,7 +8,7 @@ urlpatterns = [
     # django urls
     path('admin/', admin.site.urls),
     # heroe api
-    path('api/heroes/', include('apps.heroe.urls')),
+    path('heroes/', include('apps.heroe.urls')),
     # heroe utils
     path('utils/heroes/', include('apps.heroe.utils.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
