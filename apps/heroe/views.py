@@ -1,5 +1,6 @@
 
 # Rest Framework
+from django.contrib.auth import authenticate
 from django.http import Http404
 from rest_framework.response import Response
 from rest_framework import status
@@ -46,3 +47,16 @@ class HeroeDetail(APIView):
         heroe_serializer = HeroeDetailSerializer(heroe)
         return Response(data=heroe_serializer.data, status=status.HTTP_200_OK)
 
+
+class Login(APIView):
+
+    @staticmethod
+    def post(request):
+        username = request.data.get('user')
+        password = request.data.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            data = {'message': str()}
+        else:
+            data = {'message': 'Incorrect username or password'}
+        return Response(data=data, status=status.HTTP_200_OK)
