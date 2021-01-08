@@ -56,7 +56,7 @@ class Login(APIView):
         password = request.data.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            data = {'message': str()}
+            data = {'message': None}
         else:
             data = {'message': 'Incorrect username or password'}
         return Response(data=data, status=status.HTTP_200_OK)
